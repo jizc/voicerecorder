@@ -1,7 +1,12 @@
 ﻿<UserControl x:Class="VoiceRecorder.RecorderView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:my="clr-namespace:VoiceRecorder.Core;assembly=VoiceRecorder.Core">
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="clr-namespace:VoiceRecorder.Core;assembly=VoiceRecorder.Core"
+    xmlns:local="clr-namespace:VoiceRecorder"
+    d:DataContext="{d:DesignInstance local:RecorderViewModel}"
+    mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Key="{x:Type ProgressBar}"
      TargetType="{x:Type ProgressBar}">
@@ -43,6 +48,6 @@
                 <TextBlock Margin="3,1" Text="{Binding RecordedTime}" FontWeight="Bold" FontSize="16"/>
             </Border>
         </StackPanel>        
-        <my:PolygonWaveFormControl Margin="5" Height="40" SampleAggregator="{Binding SampleAggregator}" IsEnabled="{Binding ShowWaveForm}" />
+        <core:PolygonWaveFormControl Margin="5" Height="40" SampleAggregator="{Binding SampleAggregator}" IsEnabled="{Binding ShowWaveForm}" />
     </StackPanel>
 </UserControl>
